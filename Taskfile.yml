@@ -1,0 +1,10 @@
+version: '3'
+
+vars:
+  IMAGE: backuptools/postgres-backup-s3
+
+tasks:
+  build:
+    desc: "Build linux/amd64+linux/arm64 locally (no push)"
+    cmds:
+      - docker buildx build --platform linux/amd64,linux/arm64 --progress=plain .
